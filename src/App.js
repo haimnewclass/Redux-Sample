@@ -5,7 +5,7 @@ import { createStore } from "redux";
 import {useSelector} from 'react-redux';
 
 
-
+/*
 
 
 // ACTIONS
@@ -36,7 +36,7 @@ const store = createStore(counter);
 
 store.subscribe(()=>{console.log(store.getState())});
 
-
+*/
 
 function App() {
 
@@ -46,7 +46,7 @@ function App() {
     <div className="App">
 
       <div onClick={()=>{
-         
+         /*
         store.dispatch(increment());
         console.log(store);
         if(store.getState()%4===0)
@@ -54,6 +54,8 @@ function App() {
           store.dispatch(decrement());
           store.dispatch(decrement());
         }
+
+        */
         
       }}>
         Start{counter}
