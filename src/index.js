@@ -12,22 +12,14 @@ import {allReducers} from './reducer'
 
 // dispatch
 
-let store = createStore(allReducers,);
+let store2 = createStore(allReducers);
      
-
-store.subscribe(()=>{console.log(store.getState())});
-
-
-
-
-
-
 
 
 
 ReactDOM.render(  
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store2}>
     <App />
     </Provider>
   </React.StrictMode>,
