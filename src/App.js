@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 
 import { createStore } from "redux";
-import {useSelector} from 'react-redux';
-
-
+import {useSelector,useDispatch} from 'react-redux';
+import {increment} from './reducers1';
+import {ItemSuper} from './item';
 /*
 
 //  https://github.com/reduxjs/redux-devtools/tree/main/extension
@@ -40,12 +40,15 @@ store.subscribe(()=>{console.log(store.getState())});
 
 function App() {
 
-  const counter = useSelector((s)=>{console.log('start');  console.log(s);});
+  const counter = useSelector(s=>s.reducer_counter);
+  const dispatchNow = useDispatch();
 
   return (
     <div className="App">
 
       <div onClick={()=>{
+
+        dispatchNow(increment())
       /*   
         store.dispatch(increment());
         console.log(store);
@@ -55,10 +58,13 @@ function App() {
           store.dispatch(decrement());
         }
 */
-        
+
+
+
         
       }}>
         Start{counter}
+        <ItemSuper/>
       </div>
      
     </div>

@@ -1,17 +1,17 @@
 
 // ACTIONS
-const offCmd=()=>{
+export  const offCmd=()=>{
     return{
       type:'OFF'
     }
   }
-  const onCmd=()=>{
+  export const onCmd=()=>{
     return{
       type:'ON'
     }
   }    
   //Reducer
-  const changeSwitch = (state=0,action) =>{
+   const changeSwitch = (state=0,action) =>{
     switch(action.type)
     {
       case "OFF":
@@ -20,6 +20,10 @@ const offCmd=()=>{
         case "ON":
           return "ONLINE"
           break;
+        default:
+            return state;
+  
       }
   }
   
+  export default changeSwitch;

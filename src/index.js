@@ -6,13 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import  {Provider} from 'react-redux';
 
 import { createStore } from "redux";
-import {allReducers} from './reducer'
+import allReducers from './reducer'
 
 
 
 // dispatch
 
-let store2 = createStore(allReducers);
+let store2 = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
      
 
 
