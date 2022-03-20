@@ -5,16 +5,16 @@ import { createStore } from "redux";
 import {useSelector,useDispatch} from 'react-redux';
 import {increment} from './reducers1';
 import {ItemSuper} from './item';
-/*
+ 
 
 //  https://github.com/reduxjs/redux-devtools/tree/main/extension
 // ACTIONS
-const increment=()=>{
+const incrementLocal=()=>{
   return{
     type:'INCREMENT'
   }
 }
-const decrement=()=>{
+const decrementLocal=()=>{
   return{
     type:'DECREMENT'
   }
@@ -32,10 +32,10 @@ const counter = (state=0,action) =>{
     }
 }
 
-const store = createStore(counter,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+export const store = createStore(counter,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-store.subscribe(()=>{console.log(store.getState())});
-*/
+store.subscribe(()=>{console.log(store.getState()); console.log('local')});
+ 
 
 
 function App() {
@@ -48,11 +48,12 @@ function App() {
 
       <div onClick={()=>{
 
-        dispatchNow(increment())
-      /*   
-        store.dispatch(increment());
+     //   dispatchNow(increment())
+      
+        store.dispatch(incrementLocal());
+
         console.log(store);
-        if(store.getState()%4===0)
+        /*if(store.getState()%4===0)
         {
           store.dispatch(decrement());
           store.dispatch(decrement());
